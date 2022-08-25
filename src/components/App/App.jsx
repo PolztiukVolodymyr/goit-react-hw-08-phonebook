@@ -1,4 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
+import { Suspense } from 'react';
+import Loader from '../../components/Loader/Loader';
 
 import AppBar from 'components/AppBar/AppBar';
 import HomePage from '../../pages/HomePage/HomePage';
@@ -16,14 +18,16 @@ import Register from '../../pages/RegisterPage/RegisterPage';
 export const App = () => {
   return (
     <>
-      <Routes>
-        <Route path="/" element={<AppBar />}>
-          <Route index element={<HomePage />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/contacts" element={<PhoneBook />} />
-        </Route>
-      </Routes>
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          <Route path="/" element={<AppBar />}>
+            <Route index element={<HomePage />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/contacts" element={<PhoneBook />} />
+          </Route>
+        </Routes>
+      </Suspense>
     </>
   );
 };

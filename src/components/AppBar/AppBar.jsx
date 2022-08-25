@@ -1,25 +1,26 @@
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
+import AuthNav from './AuthNav';
+import Navigation from './Navigation';
+import UserMenu from '../../components/UserMenu/UserMenu';
 import { Outlet } from 'react-router';
-import { Suspense } from 'react';
-import  Loader  from '../../components/Loader/Loader';
+
+import { getIsLoggedIn } from "../redux/auth/authSelectors"
+import { useSelector } from 'react-redux';
 
 
 export const AppBar = () => {
+	const isLogedIn = useSelector(getIsLoggedIn);
+	console.log("isLogedIn:", isLogedIn);
 	return (
 		<div>
-			<nav>
-				<NavLink to="/">Головна сторінка</NavLink>
-				<NavLink to="/contacts">Контакти</NavLink>
-				<NavLink to="/register">Реєстрація</NavLink>
-				<NavLink to="/login">Залогінитися</NavLink>
-			</nav>
-			<div>
-				<Suspense fallback={<Loader />}>
-					<Outlet />
-				</Suspense>
-			</div>
+			<header>
+				<Navigation />
+				{isLogedIn ? <UserMenu /> : <AuthNav />}
+			</header>
+		   <Outlet />
 		</div>
 	);
 };
 
 export default AppBar;
+
