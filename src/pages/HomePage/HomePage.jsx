@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import ContactForm from '../../components/ContactForm/ContactForm';
-import Filter from '../../components/Filter/Filter';
-import ContactList from '../../components/ContactList/ContactList';
+// import { useState } from 'react';
+// import ContactForm from '../../components/ContactForm/ContactForm';
+// import Filter from '../../components/Filter/Filter';
+// import ContactList from '../../components/ContactList/ContactList';
 import UserMenu from '../../components/UserMenu/UserMenu';
 
 export default function HomePage() {
-   const [filter, setFilter] = useState('');
+  //  const [filter, setFilter] = useState('');
 
    return (
      <>
