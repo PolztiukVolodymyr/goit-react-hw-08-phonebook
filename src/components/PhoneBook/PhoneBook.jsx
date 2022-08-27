@@ -25,9 +25,8 @@ export default function PhoneBook() {
     dispatch(fetchContacts());
     }, [dispatch]);
   
-  //  	const  isVisibleContacts = () => {
-	
-	// 	if (contacts) {
+  //  const  isVisibleContacts = () => {
+		// 	if (contacts) {
   //     if (contacts.length !== 0) {
   //       console.log(contacts);
   //       return contacts.filter(contact =>
@@ -39,7 +38,7 @@ export default function PhoneBook() {
   // };
 
   const isVisibleContacts = () => {
-     console.log("contacts: ", contacts);
+    //  console.log("contacts: ", contacts);
     if (contacts.length !== 0 && typeof contacts !== 'string') {
          return contacts.filter(({ name }) =>
         name.toLowerCase().includes(filter.toLowerCase())
