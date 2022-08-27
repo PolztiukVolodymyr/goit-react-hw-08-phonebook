@@ -1,21 +1,26 @@
 import { Routes, Route } from 'react-router-dom';
-import { Suspense } from 'react';
+import { useDispatch } from 'react-redux';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { getIsRefreshing } from '../redux/auth/authSelectors';
+import { fetchCurrentUser } from '../redux/auth/authOperations';
+import { useEffect, Suspense, lazy } from 'react';
 import Loader from '../../components/Loader/Loader';
 
-import AppBar from 'components/AppBar/AppBar';
-import HomePage from '../../pages/HomePage/HomePage';
-import PhoneBook from '../PhoneBook/PhoneBook';
-import Login from '../../pages/LoginPage/LoginPage';
-import Register from '../../pages/RegisterPage/RegisterPage';
-
-// import { lazy } from 'react';
-// const AppBar = lazy(() => import('components/AppBar'));
-// const Home = lazy(() => import('pages/Home'));
-// const Contacts = lazy(() => import('pages/Contacts'));
-// const Login = lazy(() => import('pages/Login'));
-// const Register = lazy(() => import('pages/Register'));
+const AppBar = lazy(() => import('components/AppBar/AppBar'));
+const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
+const PhoneBook = lazy(() => import('../PhoneBook/PhoneBook'));
+const Login = lazy(() => import('../../pages/LoginPage/LoginPage'));
+const Register = lazy(() => import('../../pages/RegisterPage/RegisterPage'));
 
 export const App = () => {
+
+   const dispatch = useDispatch();
+  //  const isRefreshing = useSelector(getIsRefreshing);
+
+   useEffect(() => {
+      dispatch(fetchCurrentUser());
+   }, [dispatch]);
+  
   return (
     <>
       <Suspense fallback={<Loader />}>

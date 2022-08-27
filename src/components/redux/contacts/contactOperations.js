@@ -32,7 +32,7 @@ export const deleteContact = createAsyncThunk('contacts/deleteContact',
    async contactId => {
       try {
          await axios.delete(`/contacts/${contactId}`);
-         toast.success(`Contact deleted.`);
+         toast.success(`Contact deleted`, { theme: "dark" });
          return contactId;
       } catch (error) {
          console.log(error.message);
@@ -40,7 +40,7 @@ export const deleteContact = createAsyncThunk('contacts/deleteContact',
    }
 );
 
-export const changeContact = createAsyncThunk('contacts/changeContact',
+export const editContact = createAsyncThunk('contacts/changeContact',
    async ({ id, name, number }) => {
       try {
          const { data } = await axios.patch(`/contacts/${id}`, {

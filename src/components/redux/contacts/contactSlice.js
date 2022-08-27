@@ -3,11 +3,12 @@ import {
    fetchContacts,
    addContact,
    deleteContact,
-   changeContact,
+   editContact,
 } from './contactOperations';
 
 const initialState = {
    contacts: [],
+   filter: '',
    isLoading: false,
    isRefreshing: false,
 };
@@ -15,6 +16,13 @@ const initialState = {
 const contactsSlice = createSlice({
    name: 'contacts',
    initialState,
+
+     reducers: {
+    changeFilter(state, { payload }) {
+      return { ...state, filter: payload };
+    },
+   },
+     
    extraReducers: {
       [addContact.pending](state) {
          state.isRefreshing = true;
@@ -41,7 +49,7 @@ const contactsSlice = createSlice({
          state.contacts = state.contacts.filter(({ id }) => id !== payload);
       },
 
-      [changeContact.fulfilled](state, { payload }) {
+      [editContact.fulfilled](state, { payload }) {
          state.contacts = state.contacts.map(contact =>
             contact.id === payload.id ? payload : contact
          );
@@ -50,3 +58,4 @@ const contactsSlice = createSlice({
 });
 
 export default contactsSlice.reducer;
+export const { changeFilter } = contactsSlice.actions;
