@@ -9,7 +9,7 @@ export default function HomePage() {
 
    return (
      <>
-       <div>Home Page</div>
+       
        <h2>Welcome to Phone Book</h2>
             
       </>

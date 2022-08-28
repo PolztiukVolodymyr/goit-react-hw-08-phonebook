@@ -12,6 +12,7 @@ const PhoneBook = lazy(() => import('../PhoneBook/PhoneBook'));
 const Login = lazy(() => import('../../pages/LoginPage/LoginPage'));
 const Register = lazy(() => import('../../pages/RegisterPage/RegisterPage'));
 const PrivateRoute = lazy(() => import('../PrivateRoute/PrivateRoute'));
+const PublicRoute = lazy(() => import('../PublicRoute/PublicRoute'));
 
 export const App = () => {
 
@@ -27,10 +28,32 @@ export const App = () => {
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<AppBar />}>
-            <Route index element={<HomePage />} />
+            <Route
+              index
+              element={
+                <PublicRoute
+                  isLoggedIn={isLoggedIn}
+                  redirectPath="/contacts"
+                  >
+                  <HomePage />
+                </PublicRoute>
+              }
+            />
+
+             <Route
+              element={
+                <PublicRoute
+                  redirectPath="/contacts"
+                  isLoggedIn={isLoggedIn}
+                  restricted
+                />
+              }
+            >
+           
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
-            
+             </Route>
+             
             <Route
               path="/contacts"
               element={

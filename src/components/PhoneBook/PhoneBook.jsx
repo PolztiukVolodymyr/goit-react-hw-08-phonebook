@@ -4,7 +4,7 @@ import ContactForm from "../ContactForm/ContactForm";
 import ContactList from "../ContactList/ContactList";
 import Filter from "../Filter/Filter";
 import { fetchContacts } from "../redux/contacts/contactOperations";
-// import { changeFilter } from "../redux/contacts/contactSlice";
+import { changeFilter } from "../redux/contacts/contactSlice";
 import css from './PhoneBook.module.css';
 
 export default function PhoneBook() {
@@ -16,26 +16,18 @@ export default function PhoneBook() {
   // const isRefreshing = useSelector(state => state.contacts.isRefreshing);
 
 
-  // Спробцвати dispatch-нути напряму changeFilter-ом без setFilter-а
   const setFilter = value => {
     dispatch(changeFilter(value));
+  };
+
+  const handleFilterInput = evt => {
+      setFilter(evt.target.value);
   };
 
     useEffect(() => {
     dispatch(fetchContacts());
     }, [dispatch]);
   
-  //  const  isVisibleContacts = () => {
-		// 	if (contacts) {
-  //     if (contacts.length !== 0) {
-  //       console.log(contacts);
-  //       return contacts.filter(contact =>
-  //         contact.name.toLowerCase().includes(filter.toLowerCase())
-  //       );
-	// 		}
-	// 	}
-	// 	return;
-  // };
 
   const isVisibleContacts = () => {
     //  console.log("contacts: ", contacts);
@@ -47,9 +39,6 @@ export default function PhoneBook() {
     return [];
   };
 
-   const changeFilter = evt => {
-      setFilter(evt.target.value);
-  };
 
   return (
     <div className={css.container}>
@@ -59,8 +48,7 @@ export default function PhoneBook() {
       </div>
       <h2 className={css.titleSection}>Contacts</h2>
         
-      <Filter filter={filter} onChange={changeFilter} />
-     {/* { isLoading && <ContactList contacts={isVisibleContacts()} />} */}
+      <Filter filter={filter} onChange={handleFilterInput } />
       <ContactList contacts={isVisibleContacts()} />
           
       

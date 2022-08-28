@@ -6,6 +6,7 @@ import { Outlet } from 'react-router';
 
 import { getIsLoggedIn } from "../redux/auth/authSelectors"
 import { useSelector } from 'react-redux';
+import css from "./AppBar.module.css"
 
 
 export const AppBar = () => {
@@ -13,7 +14,7 @@ export const AppBar = () => {
 	console.log("isLogedIn:", isLogedIn);
 	return (
 		<div>
-			<header>
+			<header className={css.header}>
 				<Navigation />
 				{isLogedIn ? <UserMenu /> : <AuthNav />}
 			</header>
