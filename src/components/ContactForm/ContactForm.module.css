@@ -1,16 +1,31 @@
+.form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+       
+}
 .label {
     margin-bottom: 20px;
     display: flex;
     align-items: center;
 }
 
-.label input {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    width: 150px;
-    height: 25px;
-    margin-left: 20px;
-    border-radius: 4px;
+.inputName{
+    margin-left: 26px;
+    width: 400px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+}
+
+.inputNumber {
+    margin-left: 10px;
+    width: 400px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+
 }
 
 .form button {

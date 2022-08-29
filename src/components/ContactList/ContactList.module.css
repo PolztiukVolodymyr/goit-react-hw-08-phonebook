@@ -1,5 +1,6 @@
 .list {
-    background-color: #acb5c2;
+    background-color: #809ca8;
+    /* background-color: #7e9dab; */
     padding: 20px;
     width: auto;
     list-style: none;
@@ -18,15 +19,6 @@
 }
 
 
-button {
-    width: 110px;
-    height: 35px;
-    font-size: 14px;
-    font-weight: 700;
-    border-radius: 5px;
-    border: 1px solid grey;
-}
-
 .list button {
 
     width: 70px;
@@ -36,7 +28,20 @@ button {
 }
 
 
-button:hover {
-    background-color: #31344d;
-    color: #fff;
+.btnDelete:hover{
+    background-color: #ed0e0e;
+
+}
+
+
+.valueWrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 280px;
+}
+
+.blockButtons{
+    display: flex;
+    column-gap: 10px;
 }

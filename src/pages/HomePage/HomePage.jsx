@@ -1,18 +1,11 @@
-// import { useState } from 'react';
-// import ContactForm from '../../components/ContactForm/ContactForm';
-// import Filter from '../../components/Filter/Filter';
-// import ContactList from '../../components/ContactList/ContactList';
-
+import css from "../Page.module.css"
 
 export default function HomePage() {
-  //  const [filter, setFilter] = useState('');
-
-   return (
+    return (
      <>
-       
-       <h2>Welcome to Phone Book</h2>
-            
-      </>
+         <h2 className={css.titleHome}>Welcome to PhoneBook !</h2>
+        <p className={css.tехтHome}>Please sign in or log in</p>
+   </>
      
    );
 }

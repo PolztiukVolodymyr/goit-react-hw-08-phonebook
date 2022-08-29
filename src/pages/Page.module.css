@@ -1,0 +1,55 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+    padding: 20px;
+    margin: 50px auto;
+}
+
+
+.label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+   
+}
+
+.label input{
+   
+    border: 1px solid rgb(177, 183, 193);
+    border-radius: 0.375rem;
+    color: rgba(44, 56, 74, 0.95);
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 0.375rem 0.75rem;
+    width: 300px;
+    margin-top: 15px;
+}
+
+.titleHome{
+    margin-top: 50px;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 900;
+    color: #065275;
+}
+
+.tехтHome{
+    margin-top: 30px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    color: #065275;
+}
+
+.pageLink{
+margin-top: 20px;
+}
+
+.pageBtn{
+    margin-top: 20px;
+}
+
+
+  

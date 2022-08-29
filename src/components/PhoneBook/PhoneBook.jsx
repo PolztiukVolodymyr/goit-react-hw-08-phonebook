@@ -12,9 +12,6 @@ export default function PhoneBook() {
   const dispatch = useDispatch();
   const contacts = useSelector(state => state.contacts.contacts);
   const filter = useSelector(state => state.contacts.filter);
-  // const isLoading = useSelector(state => state.contacts.isLoading);
-  // const isRefreshing = useSelector(state => state.contacts.isRefreshing);
-
 
   const setFilter = value => {
     dispatch(changeFilter(value));
@@ -30,7 +27,7 @@ export default function PhoneBook() {
   
 
   const isVisibleContacts = () => {
-    //  console.log("contacts: ", contacts);
+    
     if (contacts.length !== 0 && typeof contacts !== 'string') {
          return contacts.filter(({ name }) =>
         name.toLowerCase().includes(filter.toLowerCase())
@@ -42,7 +39,7 @@ export default function PhoneBook() {
 
   return (
     <div className={css.container}>
-      <h1 className={css.title}>Phonebook</h1>
+     
       <div className={css.wrap}>
         <ContactForm />
       </div>

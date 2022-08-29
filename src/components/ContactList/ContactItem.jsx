@@ -68,25 +68,26 @@ const ContactItem = ({  id, name, number }) => {
                />
             </>
          ) : (
-            <>
+            <div className={css.valueWrap}>
                <span className={css.name}>{name}: </span>
                <span>{number}</span>
-            </>
+            </div>
          )}
-         <div className={css.BlockButtons}>
-            <div className={css.btn}>
-               <button type="button" onClick={handelChengeContact}>
+         <div className={css.blockButtons}>
+            
+               <button className={css.btnContacts} type="button" onClick={handelChengeContact}>
                   {changeContact ? 'Save' : 'Edit'}
                </button>
-            </div>
-            <div className={css.BtnWrap}>
-               <button
+            
+            
+              <button
+                  className={css.btnDelete}
                   type="button"
                   onClick={() => dispatch(deleteContact(id))}
                >
                   Delete
                </button>
-            </div>
+            
          </div>
       </li>
    );

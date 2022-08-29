@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { logIn } from "../../components/redux/auth/authOperations";
-import css from "./LoginPage.module.css";
+import css from "../Page.module.css"
 
 
 export default function LoginPage() {
@@ -35,11 +35,10 @@ export default function LoginPage() {
 
 
   return (
-          <div>
-         <h1>Login page</h1>
-         <form onSubmit={handleSubmit} className={css.form}>
+                  
+        <form onSubmit={handleSubmit} className={css.form}>
+           <h2>Login page</h2>
             <label className={css.label}>
-               Email
                <input
                   onChange={handleChange}
                   type="email"
@@ -50,7 +49,6 @@ export default function LoginPage() {
                />
             </label>
             <label className={css.label}>
-               Password
                <input
                  onChange={handleChange}
                   type="password"
@@ -62,13 +60,12 @@ export default function LoginPage() {
                />
             </label>
             <div >
-          <button type="submit" >
+          <button className={css.pageBtn} type="submit" >
             Login
                   {/* {isLoading ? 'Login...' : 'Login'} */}
                </button>
             </div>
-            <NavLink to="/register">To register form.</NavLink>
+            <NavLink className={css.pageLink} to="/register">To register form.</NavLink>
          </form>
-      </div>
-  );
+     );
 };

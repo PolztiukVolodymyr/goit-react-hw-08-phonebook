@@ -1,5 +1,44 @@
 .header{
+    background-color: #172f78;
+    padding: 20px 50px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.4),
+            0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+
+.titleLinc{
+    font-size: 28px;
+    font-weight: 700;
+    color: #dadbe3;
+}
+
+.titleLinc:hover,
+.titleLinc:focus {
+    color: #3fdb18;
+}
+
+.homeLinc{
+    color: #ffff1f;
+    margin-left: 30px;
+    font-weight: 500;
+}
+
+.homeLinc:hover,
+.homeLinc:focus {
+    color: #3fdb18;
+}
+
+.authLinc {
+    color: #f5f549;
+    margin-left: 30px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.authLinc:hover,
+.authLinc:focus {
+    color: #3fdb18;
+    
 }

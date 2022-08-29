@@ -5,23 +5,22 @@ h2 {
 }
 
 .container {
-    width: 450px;
-    background: #dcdcdc;
-    border-radius: 10px;
     margin: auto;
+    margin-top: 20px;
+    max-width: 600px;
+    /* background: #dcdcdc; */
+    background-color: #c3cfc2;
+    border-radius: 10px;
     padding: 20px;
 
 }
 
 .wrap {
-    background-color: #acb5c2;
+    background-color:#809ca8;
     border-radius: 10px;
     padding: 20px;
 }
 
-.wrap button {
-    margin-left: 150px;
-}
 
 .title {
     margin-bottom: 20px;
@@ -30,7 +29,7 @@ h2 {
 
 
 .titleSection {
-    margin-bottom: 20px;
-    margin-top: 40px;
+    margin-top: 25px;
+    text-align: center;
 
 }

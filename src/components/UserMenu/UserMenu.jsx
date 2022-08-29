@@ -1,15 +1,15 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getEmail } from '../redux/auth/authSelectors';
+import { getUserName } from '../redux/auth/authSelectors';
 import { logOut } from '../redux/auth/authOperations';
 import userAvatar from '../../images/user-logo.png';
 import css from './UserMenu.module.css';
 
 
 export default function UserMenu() {
-   const email = useSelector(getEmail);
+   const name = useSelector(getUserName);
    const dispatch = useDispatch();
-
+   
    return (
       <div className={css.container}>
          <img
@@ -18,10 +18,10 @@ export default function UserMenu() {
             alt="avatar"
             width="40"
          />
-         <span className={css.text}>Welcome {email}</span>
+         <span className={css.text}>Welcome {name}</span>
          <div>
                <button
-               className={css.btn}
+               className={css.userBtn}
                type="button"
                onClick={() => dispatch(logOut())}
             >

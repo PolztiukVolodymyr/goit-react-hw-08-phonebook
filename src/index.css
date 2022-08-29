@@ -7,6 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #eff2e9;
 }
 
 code {
@@ -24,16 +25,33 @@ p {
   margin-top: 0;
 }
 
-ul,
-ol {
+ul {
   list-style: none;
   padding-left: 0;
   margin: 0;
+}
+
+a{
+  text-decoration: none;
 }
 
 img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+button {
+  width: 110px;
+  height: 35px;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 5px;
+  border: 1px solid grey;
+}
+
+button:hover {
+  background-color: #172f78;
+  color: #fff;
 }
 

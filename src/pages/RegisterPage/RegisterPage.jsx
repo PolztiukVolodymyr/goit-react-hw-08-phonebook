@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { register } from "../../components/redux/auth/authOperations";
-import css from "./RegisterPage.module.css";
+import css from "../Page.module.css"
 
 
 export default function RegisterPage() {
@@ -40,11 +40,11 @@ export default function RegisterPage() {
 
 
   return (
-    <div>
-         <h1>Register page</h1>
-         <form onSubmit={handleSubmit} className={css.form}>
+            
+        <form onSubmit={handleSubmit} className={css.form}>
+           <h2>Sign up</h2>
             <label className={css.label}>
-               Name
+               
                <input
                   onChange={handleChange}
                   type="name"
@@ -55,7 +55,7 @@ export default function RegisterPage() {
                />
             </label>
             <label className={css.label}>
-               Email
+               
                <input
                   onChange={handleChange}
                   type="email"
@@ -66,7 +66,7 @@ export default function RegisterPage() {
                />
             </label>
             <label className={css.label}>
-               Password
+               
                <input
                   onChange={handleChange}
                   type="password"
@@ -78,12 +78,11 @@ export default function RegisterPage() {
                />
             </label>
             <div >
-               <button type="submit" >
+               <button className={css.pageBtn} type="submit" >
                   Sign up
                </button>
             </div>
-            <NavLink to="/login">To login form.</NavLink>
+            <NavLink className={css.pageLink} to="/login">To login form.</NavLink>
          </form>
-      </div>
-  );
+       );
 };

@@ -55,6 +55,7 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className={css.form}>
       <label className={css.label}>Name
         <input
+          className={css.inputName}
           onChange={handleChange}
           type="text"
           name="name"
@@ -68,6 +69,7 @@ export default function ContactForm() {
       </label>
       <label className={css.label}>Number
         <input
+          className={css.inputNumber}
           onChange={handleChange}
           type="tel"
           name="number"
@@ -79,7 +81,7 @@ export default function ContactForm() {
           required
         />
       </label>
-      <button type="submit" disabled={isChanging}>Add contact</button>
+      <button className={css.btnContact} type="submit" disabled={isChanging}>Add contact</button>
       <ToastContainer theme="colored" autoClose={2000}/>
     </form>
   );
