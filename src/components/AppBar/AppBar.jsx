@@ -11,7 +11,6 @@ import css from "./AppBar.module.css"
 
 export const AppBar = () => {
 	const isLogedIn = useSelector(getIsLoggedIn);
-	console.log("isLogedIn:", isLogedIn);
 	return (
 		<div>
 			<header className={css.header}>
