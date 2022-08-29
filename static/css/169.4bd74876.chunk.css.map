@@ -1,1 +1,0 @@
-{"version":3,"file":"static/css/169.4bd74876.chunk.css","mappings":"AAAE,uBACI,WACJ,CAGA,wBACI,YAAa,CACb,qBAAsB,CACtB,kBACJ","sources":["pages/LoginPage/LoginPage.module.css"],"sourcesContent":["  .form {\n      width: 320px;\n  }\n\n\n  .label {\n      display: flex;\n      flex-direction: column;\n      margin-bottom: 15px;\n  }"],"names":[],"sourceRoot":""}
