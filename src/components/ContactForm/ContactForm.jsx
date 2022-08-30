@@ -40,7 +40,7 @@ export default function ContactForm() {
    
    if (name && number) {
      dispatch(addContact({ name: name, number: number }));
-      toast.success(`Contact created`);
+      // toast.success(`Contact created`);
        reset();
    };
        

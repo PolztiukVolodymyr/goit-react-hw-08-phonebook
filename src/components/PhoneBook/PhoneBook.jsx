@@ -47,13 +47,6 @@ export default function PhoneBook() {
         
       <Filter filter={filter} onChange={handleFilterInput } />
       <ContactList contacts={isVisibleContacts()} />
-          
-      
-      {/* {filteredContacts.length
-            ? <ContactList
-              contacts={filteredContacts}
-              onDeleteContact={deleteContacts} />
-            : null} */}
     </div>
   );
 };

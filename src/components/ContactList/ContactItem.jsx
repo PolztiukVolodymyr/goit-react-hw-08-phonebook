@@ -6,18 +6,15 @@ import 'react-toastify/dist/ReactToastify.css';
 import css from "./ContactList.module.css";
 import { editContact, deleteContact } from '../redux/contacts/contactOperations';
 import { getContacts } from '../redux/contacts/contactsSelectors';
-// import { useDeleteContactMutation } from "../../redux/Api";
 
 
 const ContactItem = ({  id, name, number }) => {
-     // const [deleteContact, { isLoading: isDeliting }] = useDeleteContactMutation();
-    // isDeliting && toast.success(`Contact deleted`, { theme: "dark" });
   
    const [changeName, setChangeName] = useState(name);
    const [changeNumber, setChangeNumber] = useState(number);
    const [changeContact, setChangeContact] = useState(false);
    const contacts = useSelector(getContacts);
-  const dispatch = useDispatch();
+   const dispatch = useDispatch();
   
      const handelChengeContact = () => {
       if (changeContact) {
@@ -92,18 +89,6 @@ const ContactItem = ({  id, name, number }) => {
       </li>
    );
   
-  // return (
-       
-  //       <li key={id} className={css.item}>
-  //         <p>
-  //           {name}: {number}
-  //         </p>
-  //          <button type="button" onClick={() => deleteContact(id)} disabled={isDeliting}>
-  //             {isDeliting ? "Deletind" : "Delete"}
-  //          </button>
-  //       </li>
-           
-  //  );
 };
 
 export default ContactItem;
