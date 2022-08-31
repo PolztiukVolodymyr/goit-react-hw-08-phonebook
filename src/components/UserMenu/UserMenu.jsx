@@ -13,6 +13,7 @@ export default function UserMenu() {
       const handleLogOut = () => {
          dispatch(logOut());
    };
+   console.log("User menu: handleLogOut")
    
    return (
       <div className={css.container}>
