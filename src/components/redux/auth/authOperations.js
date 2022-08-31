@@ -36,10 +36,12 @@ export const logIn = createAsyncThunk('auth/login', async credentials => {
 });
 
 export const logOut = createAsyncThunk('auth/logout', async () => {
+      toast.success(`Before!`);
    try {
       await axios.post('/users/logout');
+      toast.success(`After!`);
       console.log("Console for Logout!")
-      toast.success(`Logout!`);
+      // toast.success(`Logout!`);
       token.unset();
    } catch (error) {
 	   console.log(error.message);

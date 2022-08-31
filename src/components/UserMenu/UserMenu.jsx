@@ -9,6 +9,10 @@ import css from './UserMenu.module.css';
 export default function UserMenu() {
    const name = useSelector(getUserName);
    const dispatch = useDispatch();
+
+      const handleLogOut = () => {
+         dispatch(logOut());
+   };
    
    return (
       <div className={css.container}>
@@ -23,7 +27,8 @@ export default function UserMenu() {
                <button
                className={css.userBtn}
                type="button"
-               onClick={() => dispatch(logOut())}
+               // onClick={() => dispatch(logOut())}
+               onClick={handleLogOut}
             >
                logOut
             </button>
