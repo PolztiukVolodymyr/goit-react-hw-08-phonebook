@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { NavLink, useLocation } from 'react-router-dom';
-import { getIsLoggedIn } from "../redux/auth/authSelectors";
+import { getIsLoggedIn } from "../../redux/auth/authSelectors";
 import css from "./AppBar.module.css"
 
 

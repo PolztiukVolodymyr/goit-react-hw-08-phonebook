@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import css from "./ContactList.module.css";
-import { editContact, deleteContact } from '../redux/contacts/contactOperations';
-import { getContacts } from '../redux/contacts/contactsSelectors';
+import { editContact, deleteContact } from '../../redux/contacts/contactOperations';
+import { getContacts } from '../../redux/contacts/contactsSelectors';
 
 
 const ContactItem = ({  id, name, number }) => {

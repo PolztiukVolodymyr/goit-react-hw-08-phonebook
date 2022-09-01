@@ -3,8 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import PropTypes from 'prop-types';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { addContact } from "../../components/redux/contacts/contactOperations";
-import { getContacts, getIsRefreshing } from "../../components/redux/contacts/contactsSelectors";
+import { addContact } from "../../redux/contacts/contactOperations";
+import { getContacts, getIsRefreshing } from "../../redux/contacts/contactsSelectors";
 
 import css from './ContactForm.module.css';
 

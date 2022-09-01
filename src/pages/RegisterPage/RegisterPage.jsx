@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { register } from "../../components/redux/auth/authOperations";
+import { register } from "../../redux/auth/authOperations";
 import css from "../Page.module.css"
 
 
