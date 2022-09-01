@@ -36,20 +36,16 @@ export const logIn = createAsyncThunk('auth/login', async credentials => {
 });
 
 export const logOut = createAsyncThunk('auth/logout', async () => {
-      toast.success(`Before! authOperations`);
    try {
       await axios.post('/users/logout');
-      toast.success(`After! authOperations`);
-      console.log("authOperations: Logout!")
-      toast.success(`Logout! authOperations.`);
       token.unset();
-   } catch (error) {
+      toast.success(`Logout!`);
+      } catch (error) {
 	   console.log(error.message);
    }
 });
 
-export const fetchCurrentUser = createAsyncThunk(
-   'auth/refresh',
+export const fetchCurrentUser = createAsyncThunk('auth/refresh',
    async (_, thunkAPI) => {
       const state = thunkAPI.getState();
       const persistedToken = state.auth.token;

@@ -13,9 +13,8 @@ export default function UserMenu() {
    const dispatch = useDispatch();
 
    const handleLogOut = () => {
-      console.log("User menu: handleLogOut")
       toast.success("LogOut!");
-         dispatch(logOut());
+      dispatch(logOut());
    };
    
    
