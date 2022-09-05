@@ -1,5 +1,4 @@
 import { Routes, Route } from 'react-router-dom';
-
 import { useDispatch, useSelector } from 'react-redux';
 import { getIsLoggedIn } from '../../redux/auth/authSelectors';
 import { fetchCurrentUser } from '../../redux/auth/authOperations';

@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import PropTypes from 'prop-types';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import {  toast } from 'react-toastify';
 import { addContact } from "../../redux/contacts/contactOperations";
 import { getContacts, getIsRefreshing } from "../../redux/contacts/contactsSelectors";
 
@@ -40,8 +39,7 @@ export default function ContactForm() {
    
    if (name && number) {
      dispatch(addContact({ name: name, number: number }));
-      // toast.success(`Contact created`);
-       reset();
+     reset();
    };
        
   };
@@ -82,7 +80,6 @@ export default function ContactForm() {
         />
       </label>
       <button className={css.btnContact} type="submit" disabled={isChanging}>Add contact</button>
-      <ToastContainer theme="colored" autoClose={2000}/>
     </form>
   );
 };

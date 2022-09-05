@@ -39,7 +39,7 @@ export const logOut = createAsyncThunk('auth/logout', async () => {
    try {
       await axios.post('/users/logout');
       token.unset();
-      toast.success(`Logout!`);
+      toast.success(`Logout!` ,{ theme: "dark" });
       } catch (error) {
 	   console.log(error.message);
    }
